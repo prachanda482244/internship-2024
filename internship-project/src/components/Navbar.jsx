@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
 import Banner from "./Banner";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [toggleNav, setToggleNav] = useState(true)
@@ -26,7 +27,7 @@ const Navbar = () => {
 
                 <ul className={` gap-3 ${toggleNav ? 'hidden' : 'block'} p-2  lg:flex items-center justify-center space-x-6 text-slate-300  font-semibold text-lg tracking-tighter w-[80vw] mx-auto
                 `}>
-                    <li>Home</li>
+                    <Link to='/'>Home</Link>
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">Academy <FaSortDown /> </li>
                         <ul className="absolute hidden top-8  group-hover:flex flex-col w-52 p-4 z-50 lg:-left-4 right-28 max-sm:top-1 bg-blue-600 gap-4">
@@ -48,7 +49,7 @@ const Navbar = () => {
                     </div>
 
 
-                    <li>Alummi</li>
+                    <Link to='/alummi'>Alummi</Link>
 
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">ECA/CCA <FaSortDown /> </li>
@@ -59,10 +60,10 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <li>Event</li>
-                    <li>News</li>
-                    <li>Notice</li>
-                    <li>Articles</li>
+                    <Link to='/event'>Event</Link>
+                    <Link to='/news'>News</Link>
+                    <Link to='/notice'>Notice</Link>
+                    <Link to='/articles'>Articles</Link>
 
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">Gallery <FaSortDown /> </li>
@@ -74,7 +75,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <li>Download</li>
+                    <Link to='/download'>Download</Link>
 
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">Login <FaSortDown /> </li>
