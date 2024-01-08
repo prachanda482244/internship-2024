@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  ul li {
+    @apply cursor-pointer py-1;
+  }
+}
