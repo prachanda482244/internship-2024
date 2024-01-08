@@ -1,42 +1,11 @@
 import { FaSortDown } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
+import { academyListItens, admissionListItems, ecaCCVListItems, galleryListItems, loginListItems } from "../constants/constant";
 
 const Navbar = () => {
 
-    const academyListItens = [
-        { name: 'About Academy' },
-        { name: 'Academic Program' },
-        { name: 'Why Hrit' },
-        { name: 'Hrit Team' },
-        { name: 'Blog' },
-    ]
-
-    const admissionListItems = [
-        { name: 'Pre registration form +2' },
-        { name: 'Admission Procedure' },
-        { name: 'Scholarship Schemas' },
-        { name: 'Hotel Management' },
-        { name: 'Business Studies' },
-        { name: 'Computer Science' },
-    ]
-    const ecaCCVListItems = [
-        { name: "Hrit Student's Council" },
-        { name: "Executive body" },
-        { name: "Research" },
-    ]
-
-    const galleryListItems = [
-        { name: "Photo Gallery" },
-        { name: "Video Gallery" },
-    ]
-    const loginListItems = [
-        { name: 'Login Exam' },
-        { name: 'Login G suite' },
-        { name: 'E-learning MS' },
-        { name: 'Login MS 365' },
-    ]
     return (
-        <nav className='bg-blue-700 flex border items-center '>
+        <nav className='bg-blue-700 flex border items-center relative z-[999999] '>
             <ul className="flex gap-3 p-2 max-w-7xl items-center justify-center space-x-6 text-slate-300 font-semibold text-lg tracking-tighter  mx-auto">
                 <li>Home</li>
                 <div className="flex relative group">
