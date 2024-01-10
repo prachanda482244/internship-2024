@@ -78,7 +78,7 @@ const Navbar = () => {
                     <Link to='/download'>Download</Link>
 
                     <div className="flex relative group">
-                        <li className="group-hover:text-slate-100 flex items-center justify-center ">Login <FaSortDown /> </li>
+                        <Link to='/login' className="group-hover:text-slate-100 flex items-center justify-center ">Login <FaSortDown /> </Link>
                         <ul className="absolute hidden top-8  group-hover:flex flex-col w-52 p-4 z-50 lg:-left-4 right-28 max-sm:top-1 bg-blue-600 gap-4">
                             {loginListItems.map((list) => (
                                 <li key={list.name}>{list.name}</li>
