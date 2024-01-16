@@ -1,9 +1,9 @@
 import * as Yup from 'yup'
 
 export const validationSchema = Yup.object({
-    firstName: Yup.string().required('First name is required'),
+    firstName: Yup.string().required('First name is required').min(4, 'First name must be more than 4 characters'),
     middleName: Yup.string(),
-    lastName: Yup.string().required('Last name is required'),
+    lastName: Yup.string().required('Last name is required').max(15, 'Last name is not more than 15 characters'),
     dobInAdDay: Yup.string().required('Day is required'),
     dobInAdMonth: Yup.string().required('Month is required'),
     dobInAdYear: Yup.string().required('Year is required'),

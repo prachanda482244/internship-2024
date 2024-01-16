@@ -65,7 +65,7 @@ const FormikForm = () => {
     const FormSubmit = async (values, other) => {
         console.log(values, 'data')
         console.log(other, 'other')
-        other.resetForm()
+        // other.resetForm()
     }
     return (
         <div>
@@ -210,7 +210,7 @@ const FormikForm = () => {
                                                     Current  <br />Address
                                                 </p>
 
-                                                <FormikInput name="currentAddress" w={80} type="text" placeholder="Blood Group" required={true} />
+                                                <FormikInput name="currentAddress" w={80} type="text" placeholder="Current Address" required={true} />
 
                                             </div>
 
@@ -394,7 +394,7 @@ const FormikForm = () => {
                                         </h1>
                                     </div>
 
-                                    <div className='flex items-center gap-3'>
+                                    <div className='flex items-center p-2 h-24 gap-3'>
                                         <FormikCheckBox name='hostelFacility' label="Hostel Facility" />
                                         <FormikCheckBox name='transportationService' label="Transporation Facility" />
                                         <div className='mt-6'>
@@ -412,7 +412,6 @@ const FormikForm = () => {
 
 
                                 <button disabled={!isValid} className='bg-blue-700 p-3 text-white disabled:bg-blue-600' type='submit'>Submit</button>
-
                             </Form>
                         )
 
