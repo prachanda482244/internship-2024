@@ -44,5 +44,5 @@ export const validationSchema = Yup.object({
     ppPhotoOfStudent: Yup.mixed().required('Passport photo of student is required'),
     hostelFacility: Yup.boolean(),
     transportationService: Yup.boolean(),
-    transportationLocation: Yup.string().required("Transportation Location field is required")
+    transportationLocation: Yup.string()
 });
