@@ -8,12 +8,9 @@ const FormikForm = () => {
         firstName: '',
         middleName: '',
         lastName: '',
-        dobInAdDay: '',
-        dobInAdMonth: '',
-        dobInAdYear: '',
-        dobInBsDay: '',
-        dobInBsMonth: '',
-        dobInBsYear: '',
+
+        dobInAd: '',
+        dobInBs: '',
 
         age: 0,
         gender: '',
@@ -85,8 +82,9 @@ const FormikForm = () => {
 
 
                                 <main className='flex flex-col max-w-6xl mx-auto justify-center bg-white shadow-md rounded p-3'>
-                                    <div className="flex gap-1  justify-between items-center ">
-                                        <h1 className='py-3  px-10 bg-red-400 uppercase text-nowrap text-white font-semibold'>1.CHILD’S personal Information: </h1>
+                                    <div className="flex gap-1 flex-col md:flex-row justify-between md:items-center ">
+                                        <h1 className='py-3  px-10 bg-red-400 uppercase text-nowrap text-white
+                                        font-semibold'>1.CHILD’S personal Information: </h1>
                                         <div className='flex flex-col  py-3 w-full'>
                                             <div className=" bg-red-400 border h-1"></div>
                                             <div className='flex flex-col font-extralight tracking-tighter '>
@@ -100,10 +98,10 @@ const FormikForm = () => {
                                         </div>
                                     </div>
 
-                                    <div className="inputs flex flex-col items-center justify gap-1">
+                                    <div className="inputs flex flex-col w-auto md:w-auto sm:items-center justify gap-1">
 
                                         {/* Name field */}
-                                        <div className="name md:w-full flex items-center justify-start gap-1">
+                                        <div className="name w-full flex md:items-center justify-start md:gap-1">
 
                                             <FormikInput name="firstName" type="text" labelName='First Name' placeholder="First" required={true} />
                                             <FormikInput name="middleName" type="text" labelName='Middle Name' placeholder="Middle" />
@@ -111,55 +109,54 @@ const FormikForm = () => {
                                         </div>
 
                                         {/* DOB FIELD */}
-                                        <div className="flex items-center">
-                                            <div className=' flex flex-col'>
+                                        <div className="flex
+                                         flex-col md:flex-row items-center w-full  ">
+                                            <div className='w-full flex flex-col'>
                                                 <div className=' underline underline-offset-8 ml-5 mt-3'>
                                                     <p>Date (BS)</p>
                                                 </div>
-                                                <div className='flex items-center'>
-                                                    <FormikInput name="dobInBsDay" type="text" placeholder="Day" required={true} />
-                                                    <FormikInput name="dobInBsMonth" type="text" placeholder="Month" required={true} />
-                                                    <FormikInput name="dobInBsYear" type="text" placeholder="Year" required={true} />
+                                                <div className=' flex w-full items-center'>
+                                                    <FormikInput name="dobInBs" type="text" placeholder="Write the nepali date" required={true} />
+
                                                 </div>
                                             </div>
-                                            <div className='flex items-center'>
-                                                <div className=' flex flex-col '>
-                                                    {/* <div className=' flex flex-col border border-white rounded-sm shadow'> */}
-                                                    <div className=' underline underline-offset-8 ml-5 mt-3'>
-                                                        <p>Date (AD)</p>
-                                                    </div>
-                                                    <div className='flex items-center'>
-                                                        <FormikInput name="dobInAdDay" type="text" placeholder="Day" required={true} />
-                                                        <FormikInput name="dobInAdMonth" type="text" placeholder="Month" required={true} />
-                                                        <FormikInput name="dobInAdYear" type="text" placeholder="Year" required={true} />
-                                                    </div>
+                                            <div className='w-full flex flex-col '>
+                                                {/* <div className=' flex flex-col border border-white rounded-sm shadow'> */}
+                                                <div className=' underline underline-offset-8 ml-5 mt-3'>
+                                                    <p>Date (AD)</p>
+                                                </div>
+                                                <div className='flex w-full items-center '>
+                                                    <FormikInput name="dobInAd" type="date" placeholder="Day" required={true} />
+
                                                 </div>
                                             </div>
                                         </div>
 
 
                                         {/* GENDER AND NATIONALITY FIELD */}
-                                        <div className="name flex items-center justify-between ">
-                                            <div className='flex items-center'>
-
-                                                <FormikInput name="gender" labelName='Gender' type="text" placeholder="Gender" required={true} />
-
-                                                <FormikInput name="nationality" labelName='Nationality' type="text" placeholder="Nationality" required={true} />
-                                                <FormikInput name="religion" type="text" labelName='Religion' placeholder="Religion" required={true} />
-                                                <FormikInput name="bloodGroup" type="text" labelName='Blood Group' placeholder="Blood Group" required={true} />
-                                                <FormikInput name="gradeAppliedFor" type="text" labelName='Grade Applied For' placeholder="Grade Applied For" required={true} />
+                                        <div className="name flex justify-between  ">
+                                            <div className='flex  flex-wrap md:flex-nowrap md:items-center'>
+                                                <div className='flex w-full'>
+                                                    <FormikInput name="gender" labelName='Gender' type="text" placeholder="Gender" required={true} />
+                                                    <FormikInput name="nationality" labelName='Nationality' type="text" placeholder="Nationality" required={true} />
+                                                    <FormikInput name="religion" type="text" labelName='Religion' placeholder="Religion" required={true} />
+                                                </div>
+                                                <div className='flex w-full'>
+                                                    <FormikInput name="bloodGroup" type="text" labelName='Blood Group' placeholder="Blood Group" required={true} />
+                                                    <FormikInput name="gradeAppliedFor" type="text" labelName='Grade Applied For' placeholder="Grade Applied For" required={true} />
+                                                </div>
                                             </div>
                                         </div>
 
                                         {/* permanentAddress: '', currentAddress: '', nameofSchoolAttended*/}
 
-                                        <div className="flex flex-col w-full items-center  ">
+                                        <div className="flex flex-col w-full items-center ">
                                             <div className='w-full py-5 border border-white shadow-lg'>
                                                 <div className='  text-center text-xl  mt-3'>
                                                     <p>Address:</p>
                                                 </div>
                                                 <div className='flex flex-col items-center '>
-                                                    <div className='flex  w-full  items-center'>
+                                                    <div className='flex  w-full items-center'>
                                                         <FormikInput labelName='Permanent Address' name="permanentAddress" type="text" placeholder="Your permanent Address" required={true} />
                                                         <FormikInput name="currentAddress" labelName='Current Address' type="text" placeholder="Current Address" required={true} />
                                                         <FormikInput name="nameofSchoolAttended" labelName='Name of School Attend' type="text" placeholder="Name of school you attend" required={true} />
@@ -177,11 +174,11 @@ const FormikForm = () => {
                                     {/* Parents Info */}
                                     <FormikHeaderComponent heading=' 2.STUDENT&apos;S PARENTAL INFORMATION (PARENT/ GUARDIAN)' />
 
-                                    <div className='mb-4'>
+                                    <div className='mb-4 w-full'>
                                         <div className='text-center uppercase text-xl  mt-3'>
                                             Parents Info
                                         </div>
-                                        <div className="flex flex-wrap shadow-xl border border-white ">
+                                        <div className="flex flex-wrap w-full shadow-xl border border-white ">
                                             <div className='flex w-full py-3 '>
 
                                                 <FormikInput name='motherName' labelName='Mother Name' required={true} placeholder={'Enter Mother Name'} type='text' />
@@ -205,10 +202,10 @@ const FormikForm = () => {
                                     <FormikHeaderComponent heading='3.Emergency contact other than parents:' />
 
                                     <div className='flex flex-col'>
-                                        <div className='text-center uppercase text-xl  mt-3'>
+                                        <div className='text-center mx-auto uppercase text-xl  mt-3'>
                                             Emergency Contacts:
                                         </div>
-                                        <div className='flex items-center flex-wrap mb-3  '>
+                                        <div className='flex flex-col md:flex-row md:items-center flex-wrap mb-3  '>
                                             <FormikInput name='personName' labelName='Your Name' required={true} placeholder={'Your Name'} type='text' />
                                             <FormikInput name='relationshipToTheChild' labelName='your relationship To The Child' required={true} placeholder={'Your Relation to the child'} type='text' />
                                             <FormikInput name='mobileNumber' labelName='your Contact Number' required={true} placeholder={'Your contact Number'} type='number' />
@@ -220,7 +217,7 @@ const FormikForm = () => {
                                     <FormikHeaderComponent heading='4.DOCUMENTS TO BE ATTACHED (upload)' />
 
                                     <div className='mb-4'>
-                                        <div className='flex  items-center flex-wrap'>
+                                        <div className='flex flex-col md:flex-row w-full md:items-center flex-wrap'>
                                             <FormikInput labelName='Birth Certificate' name='birthCertificate' required={true} type='file' />
                                             <FormikInput labelName='transfer certificate' name='transferCertificate' required={true} type='file' />
                                             <FormikInput labelName='Migration' name='migration' required={true} type='file' />
@@ -229,24 +226,23 @@ const FormikForm = () => {
                                             <FormikInput labelName='parent Citizenship' name='parentCitizenship' required={true} type='file' />
 
                                         </div>
-                                        <div className='flex mx-auto justify-center items-center '>
+                                        <div className='md:flex md:mx-auto justify-center items-center '>
                                             <FormikInput labelName='pp size Photo Of Student' name='ppPhotoOfStudent' required={true} type='file' />
                                         </div>
                                     </div>
 
                                     <FormikHeaderComponent heading=' 5.Transporation Facility' />
 
-                                    <div className='flex flex-col  p-2  h-32 '>
-                                        <div className='flex items-center mt-10 '>
+                                    <div className='flex flex-col   p-2 h-44 md:h-32 '>
+                                        <div className='flex md:items-center mt-10 '>
                                             <FormikCheckBox name='hostelFacility' label="Hostel Facility" />
                                             <FormikCheckBox name='transportationService' label="Transporation Facility" />
                                         </div>
-                                        <div className=' w-full flex  justify-center '>
+                                        <div className='  md:w-full flex items-center  md:justify-center '>
                                             {
                                                 values.transportationService ?
                                                     <FormikInput name="transportationLocation" type="text" placeholder="Transportation Location" />
-                                                    : null
-
+                                                    : <p className='text-center text-red-400 text-sm font-bold h-10 mt-10 ml-10 md:mt-10'>*If you want the transportation facility ,tick in the box !! *</p>
                                             }
                                         </div>
 
@@ -265,6 +261,7 @@ const FormikForm = () => {
 
         </div>
     )
+
 }
 
 export default FormikForm
