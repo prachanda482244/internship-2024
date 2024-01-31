@@ -3,6 +3,8 @@ import FormikInput from './FormikInput'
 import { validationSchema } from './schema/formikSchema'
 import FormikCheckBox from './FormikCheckBox'
 import FormikHeaderComponent from './FormikHeaderComponent'
+import FormikSelect from './FormikSelect'
+import { genders } from './index'
 const FormikForm = () => {
     const initialValues = {
         firstName: '',
@@ -11,8 +13,6 @@ const FormikForm = () => {
 
         dobInAd: '',
         dobInBs: '',
-
-        age: 0,
         gender: '',
         nationality: '',
         religion: '',
@@ -27,7 +27,7 @@ const FormikForm = () => {
 
         // # STUDENT'S PARENTAL INFORMATION (PARENT/ GUARDIAN)
         motherName: '',
-        MotherContactNumber: '',
+        motherContactNumber: '',
         fatherName: '',
         fatherContactNumber: '',
         guardianName: '',
@@ -57,13 +57,10 @@ const FormikForm = () => {
         transportationService: false, //yes/no) radio btn -> if yes. location input field
         transportationLocation: ''
     }
-
-
-
     const FormSubmit = async (values, other) => {
         console.log(values, 'data')
-        console.log(other, 'other')
-        // other.resetForm()
+        console.log(other);
+        // resetForm()
     }
     return (
         <div className='bg-gray-200'>
@@ -137,7 +134,8 @@ const FormikForm = () => {
                                         <div className="name flex justify-between  ">
                                             <div className='flex  flex-wrap md:flex-nowrap md:items-center'>
                                                 <div className='flex w-full'>
-                                                    <FormikInput name="gender" labelName='Gender' type="text" placeholder="Gender" required={true} />
+                                                    {/* <FormikInput name="gender" labelName='Gender' type="text" placeholder="Gender" required={true} /> */}
+                                                    <FormikSelect name='gender' genders={genders} />
                                                     <FormikInput name="nationality" labelName='Nationality' type="text" placeholder="Nationality" required={true} />
                                                     <FormikInput name="religion" type="text" labelName='Religion' placeholder="Religion" required={true} />
                                                 </div>
@@ -182,7 +180,7 @@ const FormikForm = () => {
                                             <div className='flex w-full py-3 '>
 
                                                 <FormikInput name='motherName' labelName='Mother Name' required={true} placeholder={'Enter Mother Name'} type='text' />
-                                                <FormikInput name='MotherContactNumber' labelName='Contact No:' required={true} placeholder={'Enter Contact Name'} type='number' />
+                                                <FormikInput name='motherContactNumber' labelName='Contact No:' required={true} placeholder={'Enter Contact Name'} type='number' />
                                             </div>
 
                                             <div className='flex w-full  py-3 '>
