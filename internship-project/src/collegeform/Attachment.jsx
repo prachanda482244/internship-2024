@@ -68,7 +68,6 @@ const Attachment = ({ step, setStep }) => {
                     <Button
                         type="primary"
                         htmlType="submit"
-                        className='text-black border-blue-900'
                         onClick={() => setStep(step + 1)}
                     >
                         Next
