@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 // import Home from './pages/Home'
 // import Login from './pages/Login'
 import FormikForm from './Formik/FormikForm'
+import OnlineAddmissionForm from './collegeform/onlineAddmissionForm'
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <Navbar />
       <Routes>
         {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/alummi' element={"Allummi"} />
+        <Route path='/online-addmission-form' element={<OnlineAddmissionForm />} />
         <Route path='/event' element={"events"} />
         <Route path='/news' element={"news"} />
         <Route path='/notice' element={"notice"} />

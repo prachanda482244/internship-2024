@@ -25,7 +25,7 @@ const Navbar = () => {
 
             <div>
 
-                <ul className={` gap-3 ${toggleNav ? 'hidden' : 'block'} p-2  lg:flex items-center justify-center space-x-6 text-slate-300  font-semibold text-lg tracking-tighter w-[80vw] mx-auto
+                <ul className={` gap-3 ${toggleNav ? 'hidden' : 'block'} p-2  lg:flex items-center justify-center space-x-6 text-slate-300  font-semibold text-lg tracking-tighter w-[90vw]  mx-auto
                 `}>
                     <Link to='/'>Home</Link>
                     <div className="flex relative group">
@@ -49,7 +49,7 @@ const Navbar = () => {
                     </div>
 
 
-                    <Link to='/alummi'>Alummi</Link>
+                    <Link className="w-full" to='/online-addmission-form'>Online addmission form</Link>
 
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">ECA/CCA <FaSortDown /> </li>
@@ -60,10 +60,10 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <Link to='/event'>Event</Link>
+                    {/* <Link to='/event'>Event</Link>
                     <Link to='/news'>News</Link>
                     <Link to='/notice'>Notice</Link>
-                    <Link to='/articles'>Articles</Link>
+                    <Link to='/articles'>Articles</Link> */}
 
                     <div className="flex relative group">
                         <li className="group-hover:text-slate-100 flex items-center justify-center ">Gallery <FaSortDown /> </li>
