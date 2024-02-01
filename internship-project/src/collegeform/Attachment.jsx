@@ -19,7 +19,7 @@ const Attachment = ({ step, setStep }) => {
             onFinishFailed={onFinishFailed}
             size="large"
         >
-            <h2 className="mb-3">Attachment</h2>
+            <h2 className="mb-3">Attachment:</h2>
 
             <div className="grid grid-cols-2 gap-5 mb-3">
                 <Form.Item label="Birth Certificate" name="birthCertificate">
