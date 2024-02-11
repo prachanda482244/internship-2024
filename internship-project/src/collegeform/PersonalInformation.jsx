@@ -1,7 +1,10 @@
 import { Button, DatePicker, Form, Input, Radio, Select } from "antd";
+import { bloodGroupOptions, religionOptions, rules, validateMessages } from "./index";
 
 export default function PersonalInformation({ step, setStep }) {
+
     const onFinish = (values) => {
+        setStep(step + 1);
         console.log("Success:", values);
     };
 
@@ -19,10 +22,12 @@ export default function PersonalInformation({ step, setStep }) {
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             size="large"
+            validateMessages={validateMessages}
         >
             <h2 className="mb-5">Student Personal Information</h2>
+
             <div className="grid grid-cols-3 gap-5 mb-5">
-                <Form.Item label="First Name" name="firstName">
+                <Form.Item label="First Name" name="firstName" rules={rules}>
                     <Input />
                 </Form.Item>
 
@@ -30,105 +35,47 @@ export default function PersonalInformation({ step, setStep }) {
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Last Name" name="lastName">
+                <Form.Item label="Last Name" name="lastName" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Date of Birth (AD)">
+                <Form.Item label="Date of Birth (AD)" name="D" rules={rules}>
                     <DatePicker className="w-full" />
                 </Form.Item>
 
-                <Form.Item label="Age" name="age">
+                <Form.Item label="Age" name="age" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Gender" name="age">
+                <Form.Item label="Gender" name="gender" rules={rules}>
                     <Radio.Group>
-                        <Radio value={1}>Male</Radio>
-                        <Radio value={2}>Female</Radio>
-                        <Radio value={3}>Others</Radio>
+                        <Radio value={"male"} >Male</Radio>
+                        <Radio value={"female"}>Female</Radio>
+                        <Radio value={"other"}>Others</Radio>
                     </Radio.Group>
                 </Form.Item>
 
-                <Form.Item label="Nationality" name="nationality">
+                <Form.Item label="Nationality" name="nationality" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Religion" name="religion">
+                <Form.Item label="Religion" name="religion" rules={rules}>
                     <Select
                         placeholder="Select your religion"
                         className="w-full"
-                        options={[
-                            {
-                                value: "hinduism",
-                                label: "Hinduism",
-                            },
-                            {
-                                value: "buddhism",
-                                label: "Buddhism",
-                            },
-                            {
-                                value: "christianity",
-                                label: "Christianity",
-                            },
-                            {
-                                value: "sikhism",
-                                label: "Sikhism",
-                            },
-                            {
-                                value: "islam",
-                                label: "Islam",
-                            },
-                            {
-                                value: "others",
-                                label: "Others",
-                            },
-                        ]}
+                        options={religionOptions}
                     />
                 </Form.Item>
 
-                <Form.Item label="Blood Group" name="bloodGroup">
+                <Form.Item label="Blood Group" name="bloodGroup" rules={rules}>
                     <Select
                         placeholder="Select your blood group"
                         className="w-full"
-                        options={[
-                            {
-                                value: "A+",
-                                label: "A+",
-                            },
-                            {
-                                value: "A-",
-                                label: "A-",
-                            },
-                            {
-                                value: "B+",
-                                label: "B+",
-                            },
-                            {
-                                value: "B-",
-                                label: "B-",
-                            },
-                            {
-                                value: "AB+",
-                                label: "AB+",
-                            },
-                            {
-                                value: "AB-",
-                                label: "AB-",
-                            },
-                            {
-                                value: "O+",
-                                label: "O+",
-                            },
-                            {
-                                value: "O-",
-                                label: "O-",
-                            },
-                        ]}
+                        options={bloodGroupOptions}
                     />
                 </Form.Item>
 
-                <Form.Item label="Academic Programs" name="academicPrograms">
+                <Form.Item label="Academic Programs" name="academicPrograms" rules={rules}>
                     <Select
                         placeholder="Select academic programs"
                         className="w-full"
@@ -157,11 +104,11 @@ export default function PersonalInformation({ step, setStep }) {
                     />
                 </Form.Item>
 
-                <Form.Item label="Current Address" name="currentAddress">
+                <Form.Item label="Current Address" name="currentAddress" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Permanent Address" name="permanentAddress">
+                <Form.Item label="Permanent Address" name="permanentAddress" rules={rules}>
                     <Input />
                 </Form.Item>
             </div>
@@ -169,7 +116,6 @@ export default function PersonalInformation({ step, setStep }) {
                 <Button
                     type="primary"
                     htmlType="submit"
-                    onClick={() => setStep(step + 1)}
                 >
                     Next
                 </Button>

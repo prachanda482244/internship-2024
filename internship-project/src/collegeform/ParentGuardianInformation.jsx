@@ -1,7 +1,10 @@
 import { Button, Form, Input } from 'antd'
+import { rules, validateMessages } from '.';
 
 const ParentGuardianInformation = ({ step, setStep }) => {
+
     const onFinish = (values) => {
+        setStep(step + 1)
         console.log("Success:", values);
     };
 
@@ -17,36 +20,37 @@ const ParentGuardianInformation = ({ step, setStep }) => {
             autoComplete="off"
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
+            validateMessages={validateMessages}
             size="large"
         >
             <h2 className="mb-5">Parent Guardian Information</h2>
 
             <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Mother name" name="mothername">
+                <Form.Item label="Mother name" name="mothername" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Contact" name="contact">
-                    <Input />
-                </Form.Item>
-
-            </div>
-            <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Father name" name="fathername">
-                    <Input />
-                </Form.Item>
-
-                <Form.Item label="Contact" name="contact">
+                <Form.Item label="Contact" name="motherContact" rules={rules}>
                     <Input />
                 </Form.Item>
 
             </div>
             <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Gurdian name" name="guardianname">
+                <Form.Item label="Father name" name="fathername" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Contact" name="contact">
+                <Form.Item label="Contact" name="fatherContact" rules={rules}>
+                    <Input />
+                </Form.Item>
+
+            </div>
+            <div className="grid grid-cols-2 gap-5 mb-5">
+                <Form.Item label="Gurdian name" name="guardianname" rules={rules}>
+                    <Input />
+                </Form.Item>
+
+                <Form.Item label="Contact" name="guardinaContact" rules={rules}>
                     <Input />
                 </Form.Item>
 
@@ -61,7 +65,6 @@ const ParentGuardianInformation = ({ step, setStep }) => {
                     <Button
                         type="primary"
                         htmlType="submit"
-                        onClick={() => setStep(step + 1)}
                     >
                         Next
                     </Button>
