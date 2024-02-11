@@ -10,7 +10,6 @@ export default function EducationalInformation({ step, setStep }) {
 
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
-        console.log("Failed");
     };
 
     return (
