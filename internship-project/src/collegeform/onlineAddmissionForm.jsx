@@ -5,6 +5,7 @@ import PersonalInformation from "./PersonalInformation";
 import ParentGuardianInformation from "./ParentGuardianInformation";
 import Attachment from './Attachment'
 import Payment from './Payment'
+import HelpUsToChild from "./HelpUsToChild";
 
 export default function OnlineAddmissionForm() {
   const [step, setStep] = useState(0);
@@ -42,6 +43,9 @@ export default function OnlineAddmissionForm() {
                   title: "Attachment",
                 },
                 {
+                  title: "Help Us To Know About Child",
+                },
+                {
                   title: "Payment",
                 },
               ]}
@@ -61,6 +65,9 @@ export default function OnlineAddmissionForm() {
                 <Attachment step={step} setStep={setStep} />
               )}
               {step === 4 && (
+                <HelpUsToChild step={step} setStep={setStep} />
+              )}
+              {step === 5 && (
                 <Payment step={step} setStep={setStep} />
               )}
             </div>

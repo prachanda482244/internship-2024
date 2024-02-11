@@ -37,13 +37,19 @@ export default function EducationalInformation({ step, setStep }) {
                     <Input />
                 </Form.Item>
 
+                <Form.Item label="Class" name="class" rules={rules}>
+                    <Input />
+                </Form.Item>
+
+
+                <Form.Item label="Year of study (AD)" name="DobInAd" rules={rules}>
+                    <DatePicker className="w-full" />
+                </Form.Item>
+
                 <Form.Item label="Grade" name="grade" rules={rules}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Date of attended (AD)" name="DobInAd" rules={rules}>
-                    <DatePicker className="w-full" />
-                </Form.Item>
             </div>
             <div className="flex justify-between">
                 <Form.Item>

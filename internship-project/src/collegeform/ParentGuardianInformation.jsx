@@ -1,5 +1,5 @@
 import { Button, Form, Input } from 'antd'
-import { rules, validateMessages } from '.';
+import { parentsData, rules, validateMessages } from '.';
 
 const ParentGuardianInformation = ({ step, setStep }) => {
 
@@ -11,6 +11,8 @@ const ParentGuardianInformation = ({ step, setStep }) => {
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
     };
+
+
     return (
         <Form
             layout="vertical"
@@ -23,38 +25,40 @@ const ParentGuardianInformation = ({ step, setStep }) => {
             validateMessages={validateMessages}
             size="large"
         >
-            <h2 className="mb-5">Parent Guardian Information</h2>
+            <h2 className="mb-5 font-semibold text-3xl">Parent Guardian Information</h2>
 
-            <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Mother name" name="mothername" rules={rules}>
+            {
+                parentsData?.map((info) => (
+
+                    <div key={info.label} className="grid grid-cols-2  gap-2 mb-5">
+                        <Form.Item className='font-semibold' label={info.label} name={info.name} rules={rules}>
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item className='font-semibold' label="Qualification" name={info.qualificationName} rules={rules}>
+                            <Input />
+                        </Form.Item>
+
+                        {/* <Form.Item label="Organization" name="Organization" rules={rules}>
                     <Input />
-                </Form.Item>
+                </Form.Item> */}
 
-                <Form.Item label="Contact" name="motherContact" rules={rules}>
+                        {/* <Form.Item label="Designation" name="Designation" rules={rules}>
                     <Input />
-                </Form.Item>
+                </Form.Item> */}
 
-            </div>
-            <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Father name" name="fathername" rules={rules}>
-                    <Input />
-                </Form.Item>
+                        <Form.Item className='font-semibold' label="Email" name={info.emailName} rules={rules}>
+                            <Input type='email' />
+                        </Form.Item>
 
-                <Form.Item label="Contact" name="fatherContact" rules={rules}>
-                    <Input />
-                </Form.Item>
+                        <Form.Item className='font-semibold' label="Contact" name={info.contactName} rules={rules}>
+                            <Input />
+                        </Form.Item>
+                    </div>
+                ))
 
-            </div>
-            <div className="grid grid-cols-2 gap-5 mb-5">
-                <Form.Item label="Gurdian name" name="guardianname" rules={rules}>
-                    <Input />
-                </Form.Item>
+            }
 
-                <Form.Item label="Contact" name="guardinaContact" rules={rules}>
-                    <Input />
-                </Form.Item>
-
-            </div>
             <div className="flex justify-between">
                 <Form.Item>
                     <Button htmlType="submit" onClick={() => setStep(step - 1)}>
